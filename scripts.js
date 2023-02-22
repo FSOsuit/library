@@ -11,21 +11,28 @@ function Book(title, author, pages, read) {
 
 
 
-function addBookToLibrary() {
-    
+function addBookToLibrary(book) {
+    myLibrary.push(book);
 };
 
 
-let title = document.getElementById("title");
-let author = document.getElementById("author");
-let pages = document.getElementById("pages");
-let read = document.getElementById("read");
+let title;
+let author;
+let pages;
+let read;
 
 let submit = document.getElementById("submit");
 
 //creates new instance of the book after pressing submit button
 submit.addEventListener('click', () => {
-    const book = new Book(title.value, author.value, pages.value, read.value);
-    console.log(book);
+    title = document.getElementById("title").value;
+    author = document.getElementById("author").value;
+    pages = document.getElementById("pages").value;
+    read = document.getElementById("read").value;
+    const book = new Book(title, author, pages, read);
+    addBookToLibrary(book);
 })
+
+
+
 
