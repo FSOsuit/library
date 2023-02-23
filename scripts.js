@@ -23,6 +23,7 @@ function createBookCard(Book) {
     }
     book.textContent = text;
     document.body.appendChild(book);
+    book.style.display = "block";
     
 }
 
@@ -47,6 +48,7 @@ submit.addEventListener('click', () => {
     const book = new Book(title, author, pages, read);
     addBookToLibrary(book);
     createBookCard(book)
+    event.preventDefault();
 })
 
 //open/close form 
