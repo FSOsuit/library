@@ -19,11 +19,11 @@ function displayBook(array) {
     for (let book in array) { // loop through myLibrary
         const book1 = array[book]; //store object of array
         for (const property in book1){ //loop through the object 
-            let titleBook1 = `${book1[property]}`; // create variable of the value of the object
+            let bookProperty = `${book1[property]}`; // create variable of the value of the object
             let bookTitle = document.createElement('div'); // create new div element for object of myLibrary
             document.body.appendChild(bookTitle) // append the element to the body
-            bookTitle.textContent = titleBook1; // add text content to div
-        } // !!!MUST READ !!!displays books, but everytime submit is pressed loops through myLibrary from the begining.!!!!
+            bookTitle.textContent = bookProperty; // add text content to div
+        } // TO DO fix, checkbox showing on!!!MUST READ !!!displays books, but everytime submit is pressed loops through myLibrary from the begining.!!!! 
     }
 }
 //declaring variables for constructor

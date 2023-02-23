@@ -1,0 +1,15 @@
+#addBookBtn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.7s ease-in-out;
+}
+
+#addBookBtn:hover {
+    transform: rotate(180deg);
+}
+
+#addBtn {
+    height: 50px;
+    width: 50px;
+}
