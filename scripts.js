@@ -45,6 +45,15 @@ submit.addEventListener('click', () => {
     displayBook(myLibrary);
 })
 
+//open/close form 
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
 
 
 

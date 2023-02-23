@@ -7,19 +7,31 @@
     <title>Library</title>
 </head>
 <body>
-
-    <label>Title of the book</label>
-    <input type="text" name="author" id="title" required><br>
-    <label>Author</label>
-    <input type="text" name="author" id="author" required><br>
-    <label>Pages</label>
-    <input type="number" name="pages" id="pages" required><br>
-    <label>Read</label>
-    <input type="checkbox" name="read" id="read" required><br>
-    <button type="submit" id="submit">submit</button>
-    <button type="submit" id="addBookBtn"> 
+    <!--A button to open the popup form-->
+    <button type="submit" id="addBookBtn" onclick="openForm()"> 
         <img src="add.png" alt="plus button" id="addBtn">
     </button> 
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+
+            <h1>Add book to the library</h1>
+    
+            <label>Title of the book</label>
+            <input type="text" name="author" id="title" required><br>
+    
+            <label>Author</label>
+            <input type="text" name="author" id="author" required><br>
+    
+            <label>Pages</label>
+            <input type="number" name="pages" id="pages" required><br>
+    
+            <label>Read</label>
+            <input type="checkbox" name="read" id="read" required><br>
+    
+            <button type="submit" id="submit" onclick="closeForm()">Add</button>
+        </form>
+    </div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
