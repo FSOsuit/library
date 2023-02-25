@@ -14,17 +14,29 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 };
 
-//creates a book div every time new book is added.  need to fix checkmark showing on and disappearing div if all fields are filled.
+//creates a book div every time new book is added.  need to fix checkmark showing on.
 function createBookCard(Book) {
     const book = document.createElement('div');
+    const checkBox = document.getElementById('read');
     let text = "";
     for (let key in Book) {
-        text += `${Book[key]} `;
+        if (key == "read") { // looks for read key 
+            if (checkBox.checked) {  // if checked does something
+                Book[read] = "Read";
+                text += Book[read];
+            }
+            else if (!checkBox.checked) { //if unchecked does something else
+                Book[read] = "Not read";
+                text += Book[read];
+            }
+        }
+        else {
+            text += `${Book[key]} `;
+        }
     }
     book.textContent = text;
     document.body.appendChild(book);
-    book.style.display = "block";
-    
+    book.style.display = "block"; 
 }
 
 
@@ -51,7 +63,7 @@ submit.addEventListener('click', () => {
 //open/close form 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-    const inputs = document.querySelectorAll("#title, #author, #pages, #read");
+    const inputs = document.querySelectorAll("#title, #author, #pages");
 
     inputs.forEach(input => {
         input.value = '';
