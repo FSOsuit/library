@@ -16,6 +16,9 @@
 
 .form-popup {
     display: none;
+    position: fixed;
+    left: 45%;
+    top: 20%;
 }
 
 body {
