@@ -27,9 +27,6 @@ function createBookCard(Book) {
     
 }
 
-function displayBook() {
-
-}
 
 //declaring variables for constructor
 let title;
