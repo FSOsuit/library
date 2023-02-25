@@ -17,3 +17,24 @@
 .form-popup {
     display: none;
 }
+
+body {
+    display: grid;
+    grid-template-rows: min-content 80%;
+    margin: 0;
+}
+
+header {
+    font-size: 90px;
+    font-weight: bold;
+    background-color: #68de7c;
+    height: fit-content;
+}
+
+footer {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #00a32a;
+}
