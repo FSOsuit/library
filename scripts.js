@@ -19,7 +19,7 @@ function createBookCard(Book) {
     const book = document.createElement('div');
     let text = "";
     for (let key in Book) {
-        text += Book[key];
+        text += `${Book[key]} `;
     }
     book.textContent = text;
     document.body.appendChild(book);
@@ -51,10 +51,16 @@ submit.addEventListener('click', () => {
 //open/close form 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
+    const inputs = document.querySelectorAll("#title, #author, #pages, #read");
+
+    inputs.forEach(input => {
+        input.value = '';
+    });
 }
 
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
+    
 }
 
 
