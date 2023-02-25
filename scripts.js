@@ -17,6 +17,7 @@ function addBookToLibrary(book) {
 //creates a book div every time new book is added.  need to fix checkmark showing on.
 function createBookCard(Book) {
     const book = document.createElement('div');
+    book.setAttribute("id", "bookDiv");
     const checkBox = document.getElementById('read');
     let text = "";
     for (let key in Book) {
@@ -60,8 +61,9 @@ submit.addEventListener('click', () => {
     event.preventDefault();
 })
 
-//open/close form 
+//open/close form and make button disappear and clears inputs of form
 function openForm() {
+    document.getElementById("addBookBtn").style.display = "none";
     document.getElementById("myForm").style.display = "block";
     const inputs = document.querySelectorAll("#title, #author, #pages");
 
