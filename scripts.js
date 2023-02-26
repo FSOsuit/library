@@ -12,6 +12,7 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 };
 
+
 //creates a book div every time new book is added.  need to fix checkmark showing on.
 function createBookCard(Book) {
     const content = document.getElementById('content');
@@ -46,6 +47,10 @@ function createBookCard(Book) {
             book.appendChild(bookAttribute);
         }
     }
+    const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute("id", "deleteBtn");
+    deleteBtn.textContent = "Delete";
+    book.appendChild(deleteBtn);
     content.appendChild(book);
     book.style.display = "block"; 
 }
@@ -105,7 +110,5 @@ function removeBlur() {
 
 }
 
-
-// make book card more readable
 //complete the rest objectives of the project
-//blur book cards when form is open
+
