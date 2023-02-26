@@ -13,13 +13,13 @@ function addBookToLibrary(book) {
 };
 
 
-//creates a book div every time new book is added.  need to fix checkmark showing on.
+//creates a book div every time new book is added.
 function createBookCard(Book) {
     const content = document.getElementById('content');
     const book = document.createElement('div');
     book.setAttribute("id", "bookDiv");
+    book.setAttribute("class","bookDiv");
     const checkBox = document.getElementById('read');
-    let text = "";
     for (let key in Book) {
         const bookAttribute = document.createElement('div');
         if (key == "read") { // looks for read key 
@@ -47,12 +47,18 @@ function createBookCard(Book) {
             book.appendChild(bookAttribute);
         }
     }
+    
+    book.dataset.order = myLibrary.length-1;
     const deleteBtn = document.createElement('button');
     deleteBtn.setAttribute("id", "deleteBtn");
     deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener('click', () => {
+        book.remove();
+        myLibrary.splice(Number(book.dataset.order, 1));
+    });
     book.appendChild(deleteBtn);
     content.appendChild(book);
-    book.style.display = "block"; 
+    book.style.display = "block";
 }
 
 
