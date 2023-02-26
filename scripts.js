@@ -94,12 +94,15 @@ function addBlur() {
     document.getElementById("header").classList.add("blur");
     document.getElementById("addBook").classList.add("blur");
     document.getElementById("footer").classList.add("blur");
+    document.getElementById("content").classList.add("blur");
 }
 
 function removeBlur() {
     document.getElementById("header").classList.remove("blur");
     document.getElementById("addBook").classList.remove("blur");
     document.getElementById("footer").classList.remove("blur");
+    document.getElementById("content").classList.remove("blur");
+
 }
 
 
