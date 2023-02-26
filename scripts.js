@@ -74,8 +74,13 @@ function openForm() {
 
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
-    
+    document.getElementById("addBookBtn").style.display = "block";
+    event.preventDefault();
 }
 
 
 
+//make background blured while form is active
+//position add btn
+// format book div after creating them and align
+//complete the rest objectives of the project
