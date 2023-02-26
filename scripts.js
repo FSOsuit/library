@@ -57,7 +57,7 @@ submit.addEventListener('click', () => {
     read = document.getElementById("read").value;
     const book = new Book(title, author, pages, read);
     addBookToLibrary(book);
-    createBookCard(book)
+    createBookCard(book);
     event.preventDefault();
 })
 
@@ -70,17 +70,30 @@ function openForm() {
     inputs.forEach(input => {
         input.value = '';
     });
+    blurBackground();
 }
 
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
     document.getElementById("addBookBtn").style.display = "block";
+    removeBlur();
     event.preventDefault();
 }
 
+function blurBackground() {
+    document.getElementById("header").classList.add("blur");
+    document.getElementById("addBook").classList.add("blur");
+    document.getElementById("footer").classList.add("blur");
+}
+
+function removeBlur() {
+    document.getElementById("header").classList.remove("blur");
+    document.getElementById("addBook").classList.remove("blur");
+    document.getElementById("footer").classList.remove("blur");
+    
+}
 
 
-//make background blured while form is active
 //position add btn
 // format book div after creating them and align
 //complete the rest objectives of the project

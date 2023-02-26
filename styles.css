@@ -55,3 +55,7 @@ footer {
     align-items: flex-end;
     background-color: #00a32a;
 }
+
+.blur {
+    filter: blur(20px);
+}
