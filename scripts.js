@@ -117,4 +117,9 @@ function removeBlur() {
 }
 
 //complete the rest objectives of the project
+//gaps between divs on cards
+//remove preadded text on divs
+//reduce height of bookdivs
+//make delete btn pretier
+//do not allow to add form before filling input fields
 
