@@ -20,21 +20,32 @@ function createBookCard(Book) {
     const checkBox = document.getElementById('read');
     let text = "";
     for (let key in Book) {
+        const bookAttribute = document.createElement('div');
         if (key == "read") { // looks for read key 
             if (checkBox.checked) {  // if checked does something
                 Book[read] = "Read";
-                text += Book[read];
+                bookAttribute.textContent = `Status: ${Book[read]}`;
+                book.appendChild(bookAttribute);
             }
             else if (!checkBox.checked) { //if unchecked does something else
-                Book[read] = "Not read";
-                text += Book[read];
+                Book[read] = "Not Read";
+                bookAttribute.textContent = `Status: ${Book[read]}`;
+                book.appendChild(bookAttribute);
             }
         }
-        else {
-            text += `${Book[key]} `;
+        else if (key == "title") {
+            bookAttribute.textContent = `Title of the book: ${Book[key]}`;
+            book.appendChild(bookAttribute);
+        }
+        else if (key == "author") {
+            bookAttribute.textContent = `Author: ${Book[key]}`;
+            book.appendChild(bookAttribute);
+        }
+        else if (key == "pages") {
+            bookAttribute.textContent = `Pages: ${Book[key]}`;
+            book.appendChild(bookAttribute);
         }
     }
-    book.textContent = text;
     content.appendChild(book);
     book.style.display = "block"; 
 }
@@ -92,5 +103,6 @@ function removeBlur() {
 }
 
 
-// format book div after creating them and align
+// make book card more readable
 //complete the rest objectives of the project
+//blur book cards when form is open
