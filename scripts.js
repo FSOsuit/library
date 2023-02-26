@@ -8,14 +8,13 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-
-
 function addBookToLibrary(book) {
     myLibrary.push(book);
 };
 
 //creates a book div every time new book is added.  need to fix checkmark showing on.
 function createBookCard(Book) {
+    const content = document.getElementById('content');
     const book = document.createElement('div');
     book.setAttribute("id", "bookDiv");
     const checkBox = document.getElementById('read');
@@ -36,7 +35,7 @@ function createBookCard(Book) {
         }
     }
     book.textContent = text;
-    document.body.appendChild(book);
+    content.appendChild(book);
     book.style.display = "block"; 
 }
 
@@ -70,7 +69,7 @@ function openForm() {
     inputs.forEach(input => {
         input.value = '';
     });
-    blurBackground();
+    addBlur();
 }
 
 function closeForm() {
@@ -80,7 +79,7 @@ function closeForm() {
     event.preventDefault();
 }
 
-function blurBackground() {
+function addBlur() {
     document.getElementById("header").classList.add("blur");
     document.getElementById("addBook").classList.add("blur");
     document.getElementById("footer").classList.add("blur");
@@ -90,7 +89,6 @@ function removeBlur() {
     document.getElementById("header").classList.remove("blur");
     document.getElementById("addBook").classList.remove("blur");
     document.getElementById("footer").classList.remove("blur");
-    
 }
 
 

@@ -3,10 +3,17 @@
     background-color: transparent;
     cursor: pointer;
     transition: transform 0.7s ease-in-out;
+    padding: 0;
 }
 
 #addBookBtn:hover {
     transform: rotate(180deg);
+    align-self: center;
+}
+
+#addBook {
+    display: flex;
+    justify-content: center;
 }
 
 #addBtn {
@@ -37,7 +44,7 @@ form {
 
 body {
     display: grid;
-    grid-template-rows: min-content 80%;
+    grid-template-rows: min-content min-content 75% 9%;
     margin: 0;
 }
 
@@ -57,5 +64,5 @@ footer {
 }
 
 .blur {
-    filter: blur(20px);
+    filter: blur(35px);
 }
