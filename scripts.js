@@ -92,6 +92,5 @@ function removeBlur() {
 }
 
 
-//position add btn
 // format book div after creating them and align
 //complete the rest objectives of the project
