@@ -30,9 +30,17 @@
 
 #bookDiv {
     width: 200px;
-    height: 350px;
+    height: 250px;
     background-color: bisque;
-
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.alignCenter {
+    text-align: center;
 }
 
 #deleteBtn {
@@ -71,6 +79,8 @@ header {
     font-weight: bold;
     background-color: #68de7c;
     height: fit-content;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 footer {
@@ -85,3 +95,25 @@ footer {
 .blur {
     filter: blur(35px);
 }
+#deleteBtn, #changeStatusBtn {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+

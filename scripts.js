@@ -39,15 +39,16 @@ function createBookCard(Book) {
             }
         }
         else if (key == "title") {
-            bookAttribute.textContent = `Title of the book: ${Book[key]}`;
+            bookAttribute.textContent = `${Book[key]}`;
             book.appendChild(bookAttribute);
+            bookAttribute.classList.add('alignCenter');
         }
         else if (key == "author") {
-            bookAttribute.textContent = `Author: ${Book[key]}`;
+            bookAttribute.textContent = `By ${Book[key]}`;
             book.appendChild(bookAttribute);
         }
         else if (key == "pages") {
-            bookAttribute.textContent = `Pages: ${Book[key]}`;
+            bookAttribute.textContent = `${Book[key]} pages`;
             book.appendChild(bookAttribute);
         }
     }
@@ -72,7 +73,7 @@ function createBookCard(Book) {
     });
     book.appendChild(deleteBtn);
     content.appendChild(book);
-    book.style.display = "block";
+    book.style.display = "flex";
 
 }
 
@@ -91,12 +92,35 @@ submit.addEventListener('click', () => {
     author = document.getElementById("author").value;
     pages = document.getElementById("pages").value;
     read = document.getElementById("read").value;
-    const book = new Book(title, author, pages, read);
-    addBookToLibrary(book);
-    createBookCard(book);
+    if (validateForm()) {
+        
+        const book = new Book(title, author, pages, read);
+        addBookToLibrary(book);
+        createBookCard(book);
+        closeForm();
+    };
     event.preventDefault();
-})
+});
 
+
+function validateForm () {
+    const myForm = document.forms['bookForm'];
+    if (myForm['title'].value == "") {
+        alert('Input the title of the book');
+        return false;
+    }
+    else if (myForm['author'].value == "") {
+        alert('Input the author of the book');
+        return false;
+    }
+    else if (myForm['pages'].value == "") {
+        alert('Input the page count of the book');
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 //open/close form and make button disappear and clears inputs of form
 function openForm() {
     document.getElementById("addBookBtn").style.display = "none";
@@ -131,10 +155,5 @@ function removeBlur() {
 
 }
 
-//complete the rest objectives of the project
-//gaps between divs on cards
-//remove preadded text on divs
-//reduce height of bookdivs
-//make delete btn pretier
 //do not allow to add form before filling input fields
-
+//color schemes
