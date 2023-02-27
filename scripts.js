@@ -20,17 +20,21 @@ function createBookCard(Book) {
     book.setAttribute("id", "bookDiv");
     book.setAttribute("class","bookDiv");
     const checkBox = document.getElementById('read');
+    const changeStatusBtn = document.createElement('button');
+    changeStatusBtn.setAttribute("id", "changeStatusBtn");
     for (let key in Book) {
         const bookAttribute = document.createElement('div');
         if (key == "read") { // looks for read key 
             if (checkBox.checked) {  // if checked does something
                 Book[read] = "Read";
-                bookAttribute.textContent = `Status: ${Book[read]}`;
+                changeStatusBtn.textContent = `${Book[read]}`;
+                bookAttribute.appendChild(changeStatusBtn);
                 book.appendChild(bookAttribute);
             }
             else if (!checkBox.checked) { //if unchecked does something else
                 Book[read] = "Not Read";
-                bookAttribute.textContent = `Status: ${Book[read]}`;
+                changeStatusBtn.textContent = `${Book[read]}`;
+                bookAttribute.appendChild(changeStatusBtn);
                 book.appendChild(bookAttribute);
             }
         }
@@ -56,9 +60,20 @@ function createBookCard(Book) {
         book.remove();
         myLibrary.splice(Number(book.dataset.order, 1));
     });
+    changeStatusBtn.addEventListener('click', () => {
+        if (changeStatusBtn.textContent == "Read") {
+            changeStatusBtn.textContent = "Not Read";
+            Book[read] = "Not Read";
+        }
+        else if (changeStatusBtn.textContent == "Not Read") {
+            changeStatusBtn.textContent = "Read";
+            Book[read] = "Read";
+        }
+    });
     book.appendChild(deleteBtn);
     content.appendChild(book);
     book.style.display = "block";
+
 }
 
 
