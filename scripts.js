@@ -28,12 +28,14 @@ function createBookCard(Book) {
             if (checkBox.checked) {  // if checked does something
                 Book[read] = "Read";
                 changeStatusBtn.textContent = `${Book[read]}`;
+                changeStatusBtn.classList.add('read');
                 bookAttribute.appendChild(changeStatusBtn);
                 book.appendChild(bookAttribute);
             }
             else if (!checkBox.checked) { //if unchecked does something else
                 Book[read] = "Not Read";
                 changeStatusBtn.textContent = `${Book[read]}`;
+                changeStatusBtn.classList.add('notRead');
                 bookAttribute.appendChild(changeStatusBtn);
                 book.appendChild(bookAttribute);
             }
@@ -65,10 +67,14 @@ function createBookCard(Book) {
         if (changeStatusBtn.textContent == "Read") {
             changeStatusBtn.textContent = "Not Read";
             Book[read] = "Not Read";
+            changeStatusBtn.classList.remove('read');
+            changeStatusBtn.classList.add('notRead');
         }
         else if (changeStatusBtn.textContent == "Not Read") {
             changeStatusBtn.textContent = "Read";
             Book[read] = "Read";
+            changeStatusBtn.classList.remove('notRead');
+            changeStatusBtn.classList.add('read');
         }
     });
     book.appendChild(deleteBtn);

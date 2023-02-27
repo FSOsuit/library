@@ -31,21 +31,25 @@
 #bookDiv {
     width: 200px;
     height: 250px;
-    background-color: bisque;
+    background-color: #00abe4;
     flex-direction: column;
     padding: 20px;
     font-size: 22px;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: white;
+    border-radius: 5%;
 }
 .alignCenter {
     text-align: center;
+    font-weight: bold;
 }
 
 #deleteBtn {
     width: 50px;
     height: 50px;
+    background-color: rgb(136, 55, 55);
 }
 .form-popup {
     display: none;
@@ -55,6 +59,7 @@
     border: solid 2px black;
     padding: 5px 10px;
     border-radius: 20px;
+    background-color: #72d3f3;
 }
 
 #bookTitle, #bookAuthor, #bookPages, #bookStatus, #scBtn {
@@ -66,18 +71,31 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
+}
+
+input {
+    background-color: #d6f5ff;
+    border-color: #82c6dd;
+    border-radius: 15px;
+}
+
+input:focus {
+    outline: none;
 }
 
 body {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     margin: 0;
+    background-color: #c1dae2;
 }
 
 header {
     font-size: 90px;
     font-weight: bold;
-    background-color: #68de7c;
+    background-color: #00abe4;
+    color: white;
     height: fit-content;
     margin-bottom: 10px;
     padding: 10px;
@@ -88,15 +106,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    background-color: #00a32a;
+    background-color: #1e375a;
+    color: white;
     height: 2.5rem;
 }
 
 .blur {
     filter: blur(35px);
 }
-#deleteBtn, #changeStatusBtn {
-  background: #5E5DF0;
+#deleteBtn, #changeStatusBtn, #submit, #close {
   border-radius: 999px;
   box-shadow: #5E5DF0 0 10px 20px -10px;
   box-sizing: border-box;
@@ -117,3 +135,10 @@ footer {
   border: 0;
 }
 
+.read, #submit {
+    background-color: rgb(44, 99, 44);
+}
+
+.notRead, #close {
+    background-color: rgb(136, 55, 55);
+}
